@@ -7,6 +7,8 @@ import { createSearxngAdapter } from "./adapters/searxng.js";
 import { createBraveAdapter } from "./adapters/brave.js";
 import { createExaAdapter } from "./adapters/exa.js";
 import { createSerperAdapter } from "./adapters/serper.js";
+import { createTavilyAdapter } from "./adapters/tavily.js";
+import { createBingAdapter } from "./adapters/bing.js";
 import { mergeResults } from "./merge.js";
 import type { EngineAdapter } from "./types.js";
 
@@ -33,6 +35,16 @@ function loadAdapters(): EngineAdapter[] {
     adapters.push(createSerperAdapter(process.env.SERPER_API_KEY));
   } else {
     missing.push("SERPER_API_KEY");
+  }
+  if (process.env.TAVILY_API_KEY) {
+    adapters.push(createTavilyAdapter(process.env.TAVILY_API_KEY));
+  } else {
+    missing.push("TAVILY_API_KEY");
+  }
+  if (process.env.BING_API_KEY) {
+    adapters.push(createBingAdapter(process.env.BING_API_KEY));
+  } else {
+    missing.push("BING_API_KEY");
   }
 
   if (adapters.length === 0) {
@@ -69,7 +81,7 @@ async function main() {
           content: [
             {
               type: "text" as const,
-              text: "No search engine adapters configured. Set SEARXNG_URL, BRAVE_API_KEY, EXA_API_KEY, or SERPER_API_KEY environment variables.",
+              text: "No search engine adapters configured. Set SEARXNG_URL, BRAVE_API_KEY, EXA_API_KEY, SERPER_API_KEY, TAVILY_API_KEY, or BING_API_KEY environment variables.",
             },
           ],
         };

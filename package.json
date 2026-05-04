@@ -7,14 +7,22 @@
   "bin": {
     "search-aggregate-mcp": "dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
     "test": "node --experimental-vm-modules node_modules/.bin/vitest run",
-    "test:watch": "node --experimental-vm-modules node_modules/.bin/vitest"
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/vitest",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": ["mcp", "search", "aggregate"],
+  "keywords": ["mcp", "search", "aggregate", "searxng", "brave", "exa", "serper", "tavily", "bing"],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florianherrengt/search-aggregate-mcp.git"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "zod": "^3.25.0"
