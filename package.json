@@ -17,7 +17,17 @@
     "test:watch": "node --experimental-vm-modules node_modules/.bin/vitest",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["mcp", "search", "aggregate", "searxng", "brave", "exa", "serper", "tavily", "bing"],
+  "keywords": [
+    "mcp",
+    "search",
+    "aggregate",
+    "searxng",
+    "brave",
+    "exa",
+    "serper",
+    "tavily",
+    "bing"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -28,6 +38,7 @@
     "zod": "^3.25.0"
   },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "vitest": "^3.1.0"
