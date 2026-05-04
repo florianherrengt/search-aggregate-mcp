@@ -1,6 +1,6 @@
 {
   "name": "search-aggregate-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server that fires multiple search engines in parallel and merges results by frequency",
   "type": "module",
   "main": "dist/index.js",
